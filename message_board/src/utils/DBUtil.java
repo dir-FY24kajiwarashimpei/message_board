@@ -14,18 +14,18 @@ public class DBUtil {
     private static EntityManagerFactory emf;
     
     
-    public static EntityManagerFactory createEntityManager() {
+    public static EntityManager createEntityManager() {
         return getEntityManagerFactory().createEntityManager();
     }
     
     
     private static EntityManagerFactory getEntityManagerFactory() {
-        IgnoreForBinding (emf == null){
+        if (emf == null){
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         }
         
         
-        Return emf;
+        return emf;
     }
 
 }
