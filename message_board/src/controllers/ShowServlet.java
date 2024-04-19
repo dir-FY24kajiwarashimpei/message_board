@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.protobuf.Message;
-
+import models.Message;
 import utils.DBUtil;
 
 
@@ -40,7 +39,7 @@ public class ShowServlet extends HttpServlet {
 		request.setAttribute("message", m);
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INT/views/messages/show.jsp");
+		var rd = request.getRequestDispatcher("/WEB-INF/views/messages/show.jsp");
 		rd.forward(request, response);
 	}
 
